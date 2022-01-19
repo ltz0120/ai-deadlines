@@ -37,17 +37,6 @@
   place: Washington, DC, USA
   sub: DM
 
-- title: IROS
-  hindex: 73
-  year: 2022
-  id: iros22
-  link: https://iros2022.org/
-  deadline: '2022-03-01 23:59:59'
-  timezone: America/Los_Angeles
-  date: October 23-27, 2022
-  place: Kyoto, Japan
-  sub: RO
-
 - title: ECCV
   hindex: 197
   year: 2022
@@ -194,17 +183,6 @@
   place: TBD
   sub: ML
   paperslink: https://www.auai.org/uai2021/accepted_papers
-
-- title: IROS
-  hindex: 58
-  year: 2021
-  id: iros21
-  link: https://www.iros2021.org/important-dates
-  deadline: '2021-03-01 23:59:59'
-  timezone: America/Los_Angeles
-  date: Sep 27-Oct 1, 2021
-  place: Prague, Czech Republic
-  sub: RO
 
 - title: ICCV
   hindex: 176
