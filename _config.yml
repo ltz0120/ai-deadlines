@@ -1,13 +1,13 @@
-title: AI Conference Deadlines
-description: Countdowns to top CV/NLP/ML/AI conference deadlines
-author: Michael Luo
+title: AI/ML Conference Deadlines
+description: Countdowns to international AI/ML conferences deadlines
+author: Benjamin Guedj
 
 domain: ""
 baseurl: "/ai-deadlines"
 
 twitter_username: bguedj
 twitter_hashtag: machinelearning
-github_username: ltz0120
+github_username: bguedj
 github_repo: ai-deadlines
 
 markdown: kramdown

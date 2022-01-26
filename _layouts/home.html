@@ -1,171 +1,133 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>{{ site.title }}</title>
-    <meta name="description" content="{{ site.description }}">
-    <meta name="author" content="{{ site.author }}">
-    <link rel="stylesheet" type="text/css" href="{{ "/static/css/bootstrap.min.css" | prepend:site.baseurl }}">
-    <link rel="stylesheet" type="text/css" href="{{ "/static/css/deadlines.css" | prepend:site.baseurl }}?t={{site.time | date: '%s'}}" media="screen,projection">
-    <link rel="shortcut icon" href="{{ "/static/img/favicon.png" | prepend:site.baseurl }}">
-    <script type="text/javascript" src="{{ "/static/js/jquery.min.js" | prepend:site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ "/static/js/jquery.countdown.min.js" | prepend:site.baseurl }}"></script>
-    <script src="{{ "/static/js/moment.min.js" | prepend:site.baseurl }}"></script>
-    <script src="{{ "/static/js/moment-timezone-with-data.min.js" | prepend:site.baseurl }}"></script>
-    <script src="{{ "/static/js/store.min.js" | prepend:site.baseurl }}"></script>
-    <script src="{{ "/static/js/ouical.min.js" | prepend:site.baseurl }}"></script>
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/static/css/bootstrap.min.css" | prepend:site.baseurl }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/static/css/deadlines.css" | prepend:site.baseurl }}?t={{site.time | date: '%s'}}" media="screen,projection">
+  <link rel="shortcut icon" href="{{ "/static/img/favicon.png" | prepend:site.baseurl }}">
+  <script type="text/javascript" src="{{ "/static/js/jquery.min.js" | prepend:site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/static/js/jquery.countdown.min.js" | prepend:site.baseurl }}"></script>
+  <script src="{{ "/static/js/moment.min.js" | prepend:site.baseurl }}"></script>
+  <script src="{{ "/static/js/moment-timezone-with-data.min.js" | prepend:site.baseurl }}"></script>
+  <script src="{{ "/static/js/store.min.js" | prepend:site.baseurl }}"></script>
+  <script src="{{ "/static/js/ouical.min.js" | prepend:site.baseurl }}"></script>
 
-  </head>
-  <body>
-    <div class="top-strip"></div>
-    <div class="container">
-        <div class="page-header">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <h1>
-                    {{ site.title }} <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ site.description }}{% if site.twitter_hashtag %} #{{ site.twitter_hashtag }}{% endif %}" data-show-count="false" style="font-size:13px;">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <iframe src="https://ghbtns.com/github-btn.html?user={{ site.github_username }}&repo={{ site.github_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-                  </h1>
-                </div>
-                <div class="col-xs-12" style="margin-bottom: 10px">
-                  by <a href="https://paperswithcode.com" class="pwc-link">
-                    <div class="icon-inner pwc-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M88 128h48v256H88zM232 128h48v256h-48zM160 144h48v224h-48zM304 144h48v224h-48zM376 128h48v256h-48z"></path><path d="M104 104V56H16v400h88v-48H64V104zM408 56v48h40v304h-40v48h88V56z"></path></svg></div>
-                    Papers With Code
-                  </a>
-                </div>
-                <div class="meta col-xs-12">
-                  {{ site.description }}.
-                  To add/edit a conference, <a target="_blank" href="//github.com/{{ site.github_username }}/{{ site.github_repo }}">send in a pull request</a>.
-                </div>
-            </div>
-            <br>
-            <div class="row">
-              <div class="col-xs-12">
-                <!-- <div class="well"> -->
-                  <form class="form-horizontal">
-                    <div class="form-group">
-                      {% for type in site.data.types %}
-                      <div class="col-md-4 col-xs-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" id="{{ type.sub }}-checkbox" class=""> {{ type.name }}
-                          </label>
-                        </div>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </form>
-                <!-- </div> -->
-              </div>
-            </div>
-            <div class="row">
-              <div class="meta col-xs-12">
-                <span class="local-timezone-hide">
-                  Deadlines are shown in <span class="local-timezone">America/New_York</span> time.
-                  To view them in conference website timezones, click on them.
-                </span>
-              </div>
-              <div class="meta col-xs-12">
-                You can optionally export all deadlines to
-                <a href="https://calendar.google.com/calendar/r?cid={{ site.url }}/ai-deadlines.ics">Google Calendar</a> or
-                <a href="/ai-deadlines.ics">.ics</a>.
-              </div>
-            </div>
+</head>
+<body>
+  <div class="top-strip"></div>
+  <div class="container">
+    <div class="page-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <h1>
+            {{ site.title }} <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ site.description }}{% if site.twitter_hashtag %} #{{ site.twitter_hashtag }}{% endif %}" data-show-count="false" style="font-size:13px;">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <iframe src="https://ghbtns.com/github-btn.html?user={{ site.github_username }}&repo={{ site.github_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+          </h1>
         </div>
-        <div id="confs">
-        <div id="coming_confs">
-          {% for conf in site.data.conferences %}
-          <div id="{{conf.id}}" class="ConfItem {% for sub in conf.sub %} {{sub}}-conf {% endfor %}">
-            <div class="row conf-row">
-                <div class="col-xs-5 col-sm-6">
-                    <a class="conf-title" href="/conference?id={{ conf.id }}">{{conf.title}} {{conf.year}}</a>
-                </div>
-                <div class="col-xs-7 col-sm-6">
-                  <span class="timer"></span>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <div class="meta">
-                  <span class="conf-date">{{conf.date}}.</span>
-                  <span class="conf-place">
-                    {% if conf.place == "Online" %}
-                    <a href="#">{{conf.place}}</a>.
-                    {% else %}
-                    <a href="http://maps.google.com/?q={{conf.place}}">{{conf.place}}</a>.
-                    {% endif %}
-                  </span>
-                </div>
-                {% if conf.note %}
-                <div class="note">
-                  {{conf.note}}
-                </div>
-                {% endif %}
-                {% if conf.pwclink or conf.paperslink %}
-                  <div class="note">
-                    {% if conf.paperslink %}
-                      <div>
-                        <a href="{{conf.paperslink}}" class="pwc-link">
-                          <div class="icon-inner pwc-icon"><svg viewBox="0 0 448 513.795" xmlns="http://www.w3.org/2000/svg"><path d="M448 349.086c0 10.974-6.299 26.18-14.059 33.94l-83.882 83.882c-7.76 7.76-22.966 14.06-33.94 14.06H48c-26.51 0-48-21.49-48-48V80.98c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v268.106zm-128 80l76.118-76.118H320v76.118zm80-348.107H48v351.988h224v-104c0-13.254 10.745-24 24-24h104V80.98z"/></svg></div>
-                          Full List of Accepted Papers
-                        </a>
-                      </div>
-                    {% endif %}
-                    {% if conf.pwclink %}
-                      <div>
-                        <a href="{{conf.pwclink}}" class="pwc-link">
-                          <div class="icon-inner pwc-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M88 128h48v256H88zM232 128h48v256h-48zM160 144h48v224h-48zM304 144h48v224h-48zM376 128h48v256h-48z"></path><path d="M104 104V56H16v400h88v-48H64V104zM408 56v48h40v304h-40v48h88V56z"></path></svg></div>
-                          Browse All Papers with Code
-                        </a>
-                      </div>
-                    {% endif %}
-                  </div>
-                {% endif %}
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="deadline">
-                  <div>Deadline:
-                    <span class="deadline-time"></span>
-                  </div>
-                </div>
-                <div class="calendar"></div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                {% for sub in conf.sub %}
-                <span title="Click to only show {{sub}} conferences" data-sub="{{sub}}" class="conf-sub {{sub}}-tag"></span>
-                {% endfor %}
-              </div>
-            </div>
-            <hr>
-          </div>
-          {% endfor %}
-        </div>
-        <div id="past_confs">
-          <h1 id="past-events-title">Past Events</h1>
-          <div id="sort-order-checkbox">
-                <label for="sort-order"><input type="checkbox" id="sort-order" name="sort-order" checked>Most recent first</label>
-            </div>
+        <div class="meta col-xs-12">
+          {{ site.description }}.
+          <!-- To add/edit a conference, <a target="_blank" href="//github.com/{{ site.github_username }}/{{ site.github_repo }}">send in a pull request</a>. -->
         </div>
       </div>
-      <footer>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12">
-            <a href="/">{{ site.domain }}</a> was built and maintained from 2016-2021 by <a href="https://twitter.com/abhshkdz">abhshkdz</a>. It is now run by <a href="https://paperswithcode.com/">Papers With Code</a>.<br>
+      <br>
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- <div class="well"> -->
+            <form class="form-horizontal">
+              <div class="form-group">
+                {% for type in site.data.types %}
+                <div class="col-md-4 col-xs-6">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="{{ type.sub }}-checkbox" class=""> {{ type.name }}
+                    </label>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </form>
+            <!-- </div> -->
           </div>
         </div>
-      </footer>
-      <br><br>
-    </div>
-    <script type="text/javascript" charset="utf-8">
-    $(function() {
+        <div class="row">
+          <div class="meta col-xs-12">
+            <span class="local-timezone-hide">
+              Deadlines are shown in <span class="local-timezone">America/New_York</span> time.
+            </span>
+          </div>
+          <div class="meta col-xs-12">
+            You can optionally export all deadlines to
+            <a href="{{ site.baseurl }}/ai-deadlines.ics">.ics</a>.
+          </div>
+          <div class="meta col-xs-12">
+            <a href="{{ site.baseurl }}">{{ site.baseurl | prepend: "https://bguedj.github.io" }}</a> is maintained by <a href="//twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a>, and based on <a href="https://aideadlin.es/">ai-deadlines</a>.
+            <br>
+            Note: this is by no means an exhaustive list of AI/ML conferences. I only list conferences I intend to participate in (e.g., contribute as PC member, submit papers, attend, etc.).
+            <br>
+            <a href="https://bguedj.github.io">Back to Benjamin Guedj's website</a>.
+          </div>
+        </div>
+      </div>
+      {% for conf in site.data.conferences %}
+      <div id="{{conf.id}}" class="{% for sub in conf.sub %} {{sub}}-conf {% endfor %}">
+        <div class="row conf-row">
+          <div class="col-xs-5 col-sm-6">
+            <a class="conf-title" href="{{ site.baseurl }}/conference?id={{ conf.id }}">{{conf.title}} {{conf.year}}</a>
+          </div>
+          <div class="col-xs-7 col-sm-6">
+            <span class="timer"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="meta">
+              <span class="conf-date">{{conf.date}}.</span>
+              <span class="conf-place">
+                {% if conf.place == "Online" %}
+                <a href="#">{{conf.place}}</a>.
+                {% else %}
+                <a href="http://maps.google.com/?q={{conf.place}}">{{conf.place}}</a>.
+                {% endif %}
+              </span>
+            </div>
+            {% if conf.note %}
+            <div class="note">
+              {{conf.note}}
+            </div>
+            {% endif %}
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="deadline">
+              <div>Deadline:
+                <span class="deadline-time"></span>
+              </div>
+            </div>
+            <div class="calendar"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <span title="Click to only show {{conf.sub}} conferences" data-sub="{{conf.sub}}" class="conf-sub"></span>
+          </div>
+        </div>
+        <hr>
+      </div>
+      {% endfor %}
+        <!-- <footer>
+        </footer> -->
+        <br><br>
+      </div>
+      <script type="text/javascript" charset="utf-8">
+        $(function() {
         // Make sure this is >= no. of subs
         // Currently not used
         var colors = ['#341f97', '#ee5253', '#2e86de',
-                      '#ff9f43', '#10ac84', '#222f3e']
+        '#ff9f43', '#10ac84', '#222f3e']
 
         // Borrowed from https://github.com/moment/moment-timezone/issues/167
         // Adds support for time zones 'UTC-12'..'UTC+12'
@@ -202,12 +164,10 @@
         }
 
         {% for conf in site.data.conferences %}
-        {% for sub in conf.sub %}
-        $('#{{conf.id}} .{{sub}}-tag').html(sub2name["{{sub}}"].toLocaleLowerCase());
-        {% endfor %}
+        $('#{{conf.id}} .conf-sub').html(sub2name["{{conf.sub}}"].toLocaleLowerCase());
         {% if conf.deadline == "TBA" %}
-          $('#{{conf.id}} .timer').html("TBA");
-          $('#{{conf.id}} .deadline-time').html("TBA");
+        $('#{{conf.id}} .timer').html("TBA");
+        $('#{{conf.id}} .deadline-time').html("TBA");
         {% else %}
           // adjust date according to deadline timezone
           var timezone = {% if conf.timezone %}"{{conf.timezone}}" {% else %} "America/New_York" {% endif %};
@@ -250,55 +210,19 @@
 
           // check if date has passed, add 'past' class to it
           var today = moment();
-          diff = today.diff(confDate);
-
-          $('#{{conf.id}}').attr("diff", diff)
-          if (diff > 0) {
+          if (today.diff(confDate) > 0)
             $('#{{conf.id}}').addClass('past');
-            $('#{{conf.id}}').appendTo($("#past_confs"))
-            $('#{{conf.id}} .timer').replaceWith($('#{{conf.id}} .deadline'));
-            $('#{{conf.id}} .calendar').remove();
-          }
-        {% endif %}
-        {% endfor %}
-
-        // Sort coming_confs and past_confs
-        $("#coming_confs .ConfItem").sort(function (a, b) {
-          return $(b).attr('diff') - $(a).attr('diff');
-        }).appendTo($("#coming_confs"));
-
-        $("#sort-order-checkbox input").on("click", function() {
-          if ($("#sort-order-checkbox input").is(":checked")) {
-            $("#past_confs .ConfItem").sort(function (a, b) {
-              return $(a).attr('diff') - $(b).attr('diff');
-            }).appendTo($("#past_confs"));
-          } else {
-            $("#past_confs .ConfItem").sort(function (a, b) {
-              return $(b).attr('diff') - $(a).attr('diff');
-            }).appendTo($("#past_confs"));
-          }
-        });
+          {% endif %}
+          {% endfor %}
 
         // Get subjects from URL
         var url = new URL(window.location);
         var subs = url.searchParams.get('sub');
         if (subs == undefined) {
-           subs = store.get('{{ site.domain }}');
-        } else {
-           subs = subs.toUpperCase().split(',');
-        }
-        if (subs != undefined) {
-          // Hide unchecked subs
-          for (var i = 0; i < all_subs.length; i++) {
-            if (subs.indexOf(all_subs[i]) < 0) {
-              $('.' + all_subs[i] + '-conf').hide();
-            }
-          }
-          // In case a conf with multiple types is wrongly hid, show all confs with at least one checked type.
-          for (var i = 0; i < subs.length; i++) {
-            $('.' + subs[i] + '-conf').show();
-          }
-        }
+         subs = store.get('{{ site.domain }}');
+       } else {
+         subs = subs.toUpperCase().split(',');
+       }
         // Get subjects from browser cache
         if (subs === undefined) {
           subs = all_subs;
@@ -310,8 +234,14 @@
             $('#' + subs[i] + '-checkbox').prop('checked', true);
           }
         }
+        // Hide unchecked subs
+        for (var i = 0; i < all_subs.length; i++) {
+          if (subs.indexOf(all_subs[i]) < 0) {
+            $('.' + all_subs[i] + '-conf').hide();
+          }
+        }
         store.set('{{ site.domain }}', subs);
-        window.history.pushState('', '', '/?sub=' + subs.join());
+        window.history.pushState('', '', '/ai-deadlines/?sub=' + subs.join());
 
         // Event handler on checkbox change
         $('form :checkbox').change(function(e) {
@@ -328,14 +258,10 @@
             var idx = subs.indexOf(csub);
             if (idx >= 0)
               subs.splice(idx, 1);
-            // In case a conf with multiple types (including this type) is wrongly hid, show all confs with at least one checked type.
-            for (var i = 0; i < subs.length; i++) {
-              $('.' + subs[i] + '-conf').show();
-            }
           }
           console.log(subs);
           store.set('{{ site.domain }}', subs);
-          window.history.pushState('', '', '/?sub=' + subs.join());
+          window.history.pushState('', '', '/ai-deadlines/?sub=' + subs.join());
         });
 
         // Event handler on sub click
@@ -346,22 +272,24 @@
               $('#' + subs[i] + '-checkbox').prop('checked', false);
               $('.' + subs[i] + '-conf').hide();
             }
+            else {
+              $('#' + subs[i] + '-checkbox').prop('checked', true);
+              $('.' + subs[i] + '-conf').show();
+            }
           }
-          $('#' + csub + '-checkbox').prop('checked', true);
-          $('.' + csub + '-conf').show();
           subs = [csub];
           console.log(subs);
           store.set('{{ site.domain }}', subs);
-          window.history.pushState('', '', '/?sub=' + subs.join());
+          window.history.pushState('', '', '/ai-deadlines/?sub=' + subs.join());
         });
-    });
-    <!-- Google analytics -->
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.ga_id }}', 'auto');
-      ga('send', 'pageview');
-    </script>
-  </body>
+      });
+<!-- Google analytics -->
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', '{{ site.ga_id }}', 'auto');
+ga('send', 'pageview');
+</script>
+</body>
 </html>
