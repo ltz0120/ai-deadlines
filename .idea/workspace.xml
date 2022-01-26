@@ -30,9 +30,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="F:\Tianze\anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -75,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642563168305</updated>
       <workItem from="1642563201024" duration="3547000" />
-      <workItem from="1643160486529" duration="1590000" />
+      <workItem from="1643160486529" duration="1812000" />
     </task>
     <servers />
   </component>
@@ -101,6 +101,6 @@
     <state width="1140" height="239" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1160@1920.0.1920.1160" timestamp="1642569606694" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ai_deadlines$process.coverage" NAME="process Coverage Results" MODIFIED="1642569606671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/ai_deadlines$process.coverage" NAME="process Coverage Results" MODIFIED="1643162586719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
   </component>
 </project>
