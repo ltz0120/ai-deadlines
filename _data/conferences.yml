@@ -13,6 +13,46 @@
   sub: CG
   note: '<b>NOTE</b>: Mandatory abstract deadline on Jan 26, 2022. More info <a href=''https://s2022.siggraph.org/program/technical-papers/''>here</a>.'
 
+- title: RecSys
+  hindex: 45
+  year: 2022
+  id: recsys22
+  link: https://recsys.acm.org/recsys22/
+  deadline: '2022-05-01 23:59:59'
+  abstract_deadline: '2022-04-20 23:59:59'
+  timezone: UTC-12
+  date: September 27 - October 1, 2022
+  place: Amsterdam, Netherlands
+  sub: DM
+  note: '<b>NOTE</b>: Mandatory abstract deadline on April 27, 2020. More info <a
+    href=''https://recsys.acm.org/recsys21/dates/''>here</a>.'
+  paperslink: https://recsys.acm.org/recsys21/accepted-contributions/#content-tab-1-0-tab
+
+- title: CIKM
+  hindex: 48
+  year: 2022
+  id: cikm22
+  link: https://cikm2022.org/
+  deadline: '2022-05-15 23:59:59'
+  abstract_deadline: '2022-05-10 23:59:59'
+  timezone: UTC-12
+  date: November 1-5, 2022
+  place: Gold Coast, Queensland, Australia
+  sub: DM
+
+- title: EMNLP
+  hindex: 112
+  year: 2022
+  id: emnlp22
+  link: https://2022.emnlp.org/
+  deadline: '2022-05-17 23:59:00'
+  timezone: UTC-12
+  date: November 7-11, 2022
+  place: Punta Cana, Dominican Republic
+  abstract_deadline: '2022-05-10 23:59:00'
+  sub: NLP
+
+
 - title: ICML
   hindex: 204
   year: 2022
