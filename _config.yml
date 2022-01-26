@@ -5,11 +5,12 @@ author: Michael Luo
 domain: ""
 baseurl: "/ai-deadlines"
 
+twitter_username: bguedj
 twitter_hashtag: machinelearning
 github_username: ltz0120
 github_repo: ai-deadlines
 
 markdown: kramdown
-ga_id:
+ga_id: UA-81430854-1
 
 include: ['_pages']
